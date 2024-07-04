@@ -1,5 +1,5 @@
 import s from './Options.module.css'
-
+const message = "Сашка Астахов!! Xватит воровать мои дз!!!";
 const Options = ({ leaveFeedback, reset, totalFeedback}) => {
   return <div className={s.container}>
     <button className={s.button} onClick={() => leaveFeedback('good')}>Good</button>
@@ -9,7 +9,7 @@ const Options = ({ leaveFeedback, reset, totalFeedback}) => {
         <button className={s.button} onClick={reset}>Reset</button>
     )}
     {totalFeedback > 0 && (
-        console.log("Сашка Астахов! Xватит воровать мои дз!!!")
+        localStorage.setItem('warning', message)
       )}
   </div>
 }
