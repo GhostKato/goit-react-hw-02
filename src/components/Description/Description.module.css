@@ -1,4 +1,10 @@
 .title {
+  font-size: 70px;
   margin-bottom: 15px;
   color: var(--color-green);
+  text-shadow: var(--text-shadow);
+}
+
+.text {
+  text-shadow: var(--text-shadow);
 }

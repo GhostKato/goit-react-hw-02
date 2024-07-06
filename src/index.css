@@ -1,16 +1,21 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Neuton", serif;
+  font-size: 20px;
   line-height: 1.5;
   font-weight: 400;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   --color-body: #1e2023;
   --color-container: #2a2d32;
   --color-green: #14c57c;
   --color-white: #f0f0f0;
   --color-button-hover: #009156;
+  --box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  --text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 body {

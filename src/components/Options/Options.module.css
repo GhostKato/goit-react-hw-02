@@ -4,12 +4,15 @@
 }
 
 .button {
-  padding: 5px;
+  padding: 10px;
   border: none;
   border-radius: 8px;
   color: var(--color-white);
   background-color: var(--color-green);
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.3s ease;
   &:hover {
     background-color: var(--color-button-hover);
+    box-shadow: none;
   }
 }
