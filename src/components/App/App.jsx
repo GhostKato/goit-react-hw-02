@@ -3,6 +3,8 @@ import Feedback from '../Feedback/Feedback';
 import Notification from '../Notification/Notification';
 import Options from '../Options/Options';
 import s from './App.module.css';
+import descriptionData from '../../assets/description.json';
+import notificationData from '../../assets/notification.json';
 
 import { useState, useEffect } from 'react';
 
@@ -41,10 +43,11 @@ function App() {
 
   return (
     <div className={s.container}>
-      <Description />
+      <Description title={descriptionData.title} description={descriptionData.description}/>
       <Options leaveFeedback={updateFeedback} reset={resetFeedback} totalFeedback={totalFeedback} />
-      <Notification totalFeedback={totalFeedback} />
-      {totalFeedback > 0 && (
+      {totalFeedback === 0 ? (
+        <Notification text={notificationData.text} />
+      ) : (
         <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />
       )}
     </div>
@@ -52,3 +55,6 @@ function App() {
 }
 
 export default App;
+
+
+

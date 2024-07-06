@@ -1,9 +1,9 @@
 import s from './Description.module.css'
 
-const Description = () => {
+const Description = ({ title, description }) => {
   return <div className={s.container}>
-    <h1 className={s.title}>Sip Happens Café</h1>
-    <p className={s.text}>Please leave your feedback about our service by selecting one of the options below.</p>
+    <h1 className={s.title}>{title}</h1>
+    <p className={s.text}>{description}</p>
   </div>
 }
 export default Description

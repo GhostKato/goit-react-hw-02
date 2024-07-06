@@ -1,11 +1,9 @@
 import s from './Notification.module.css';
 
-const Notification = ({ totalFeedback }) => {
+const Notification = ({text}) => {
     return (
-        <>
-            {totalFeedback <= 0 && (
-                <p className={s.text}>No feedback yet</p>
-            )}
+        <>           
+            <p className={s.text}>{text}</p>            
         </>
     );
 };
