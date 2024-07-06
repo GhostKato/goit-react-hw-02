@@ -10,7 +10,3 @@
   background-color: var(--color-container);
   box-shadow: var(--box-shadow);
 }
-
-.text {
-  text-shadow: var(--text-shadow);
-}

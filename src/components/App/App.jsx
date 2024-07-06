@@ -1,5 +1,6 @@
 import Description from '../Description/Description';
 import Feedback from '../Feedback/Feedback';
+import Notification from '../Notification/Notification';
 import Options from '../Options/Options';
 import s from './App.module.css';
 
@@ -42,10 +43,9 @@ function App() {
     <div className={s.container}>
       <Description />
       <Options leaveFeedback={updateFeedback} reset={resetFeedback} totalFeedback={totalFeedback} />
-      {totalFeedback > 0 ? (
+      <Notification totalFeedback={totalFeedback} />
+      {totalFeedback > 0 && (
         <Feedback feedback={feedback} totalFeedback={totalFeedback} positiveFeedback={positiveFeedback} />
-      ) : (
-        <p className={s.text}>No feedback yet</p>
       )}
     </div>
   );
