@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [feedback, setFeedback] = useState(() => {
     const savedStats = JSON.parse(window.localStorage.getItem('stats'));
-  if (!savedStats) {
+  if (savedStats) {
     return savedStats;
   }
   return {
