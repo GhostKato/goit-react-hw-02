@@ -9,21 +9,20 @@ import notificationData from '../../assets/notification.json';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [feedback, setFeedback] = useState({
+  const [feedback, setFeedback] = useState(() => {
+  const savedStats = JSON.parse(window.localStorage.getItem('stats'));
+  if (savedStats?.length) {
+    return savedStats;
+  }
+  return {
     good: 0,
     neutral: 0,
     bad: 0,
-  });
+  };
+});
   
   useEffect(() => {
-    const savedStats = localStorage.getItem('feedbackStats');
-    if (savedStats) {
-      setFeedback(JSON.parse(savedStats));
-    }
-  }, []);
-  
-  useEffect(() => {
-    localStorage.setItem('feedbackStats', JSON.stringify(feedback));
+    window.localStorage.setItem('stats', JSON.stringify(feedback));
   }, [feedback]);
   
   const updateFeedback = (type) => {
